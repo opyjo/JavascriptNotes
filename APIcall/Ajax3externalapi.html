@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ajax3</title>
+
+        <style>
+          
+            .users {
+                display: inline;
+                background: #f4f4f4;
+                padding: 10px;
+                display: flex;
+                flex-direction: row;  
+            }
+
+            .users h1 {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Making an external API call -->
+
+        <button id="button">Load GitHub Users</button>
+
+            <h1>GitHub Users</h1>
+            <div id="users"></div>
+        </div>
+
+        <script>
+            const button = document.querySelector("#button");
+
+            button.addEventListener("click", loadUsers);
+
+            const usersinfo = document.querySelector("#users");
+
+            function loadUsers() {
+                var xhr = new XMLHttpRequest();
+
+                xhr.open("GET", "https://api.github.com/users", true);
+
+                xhr.onload = function () {
+                    if (this.status === 200) {
+                        const users = JSON.parse(this.responseText);
+
+                        users.forEach((user) => {
+                            userHTML = 
+                            `<div class ='users'>
+                                <img src = "${user.avatar_url}" height = "200" width ="200">
+                                <h1>UserLogin :${user.login}</h1>
+                                <h1>UserID :${user.id}</h1>
+                            </div>`;
+
+                            usersinfo.innerHTML += userHTML;
+                        });
+                    }
+                };
+                xhr.send();
+            }
+        </script>
+    </body>
+</html>

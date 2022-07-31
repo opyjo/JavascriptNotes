@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // JSON is javascript object Notation.When exchanging data between a browser and a server, the data can only be text.JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.We can also convert any JSON received from the server into JavaScript objects.This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
+
+        const myObj = {name: "John", age: 31, city: "New York"};
+        console.log(myObj);
+        const myJSON = JSON.stringify(myObj);// This converts the object to JSON so that the data can be transfered
+        console.log(myJSON);
+        const myObj2 = JSON.parse(myJSON);// This converts the JSOn back to object once the data is received.
+        console.log(myObj2);
+
+
+    
+    </script>
+</body>
+</html>

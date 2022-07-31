@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ForWhileLoop</title>
+</head>
+<body>
+    
+    <script>
+        
+
+        // The for loop is no longer in use and has been replced by the array looping methods however it can still be found in some old codes
+        // 1. The initialization,
+        // 2. The condition
+        // 3. The final-expression.
+
+        const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
+
+        // for(let i = 0; i < numbers.length; i++){
+        //     console.log(numbers[i]);
+        // };
+
+        // The for of Loop
+        // it is used for looping over iterables.
+        // Actaully works with emojis too.
+
+        // const name = "wes Bos👨‍👩‍👦‍👦";
+
+        // for (const letter of name){
+        //     console.log(letter);
+        // }
+        for(const number of numbers){
+            console.log(number);
+        };
+
+        //The for-in is used for looping over the keys ina an object.
+        for(const number in numbers){
+            console.log(number);
+        };
+
+        const wes = {
+            name  : "wes",
+            age : 100,
+            cool : true
+        };
+        for( props in wes){
+            console.log(props);
+        }
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <ul class="prizes"></ul>
+  <script>
+                //Maps are a new object type that allow to store collections of key-value pairs.Unlike with objects, map keys can be of any type, even objects or functions. It’s also easy to get the size of a map, while it’s not as straightforward for objects. On top of that, with maps we can iterate in the order in which the values were added, contrary to objects where there’s no guarantee about the order.
+    const person1 = {
+      name: 'wes',
+      age: 200
+    };
+
+    const myMap = new Map();
+    // .set()
+    myMap.set('name', 'wes');
+    myMap.set(100, 'This is a number');
+    myMap.set(person1, 'Really Cool');
+    console.log(myMap);
+
+    const score = 200;
+    const prizes = new Map();
+    prizes.set(100, 'Bear');
+    prizes.set(200, 'Duck');
+    prizes.set(300, 'Car');
+    console.log(`you win a ${prizes.get(score)}`);
+
+    // select that ul
+    const ul = document.querySelector('.prizes');
+    for (const [points, prize] of prizes) {
+      const li = `<li>${points} - ${prize}</li>`;
+      ul.insertAdjacentHTML('beforeend', li);
+    }
+   //  when to use map.
+
+   // 1. we use a map when we need to maintain the order of an item.
+   
+   //
+  </script>
+</body>
+
+</html>

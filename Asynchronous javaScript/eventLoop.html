@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Loop</title>
+    <link rel="stylesheet" href="../base.css">
+</head>                 
+<body>
+
+    <style>
+        .go{
+            margin : 5rem;
+            background: white;
+            padding: 10rem;
+            width: 25rem;
+            height: 25rem;
+            transition: all 0.2s;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+        .red{
+            background: red;
+        }
+        .purple{
+            background: purple;
+            color: white;
+        }
+        .fadeOut{
+            opacity : 0;
+        }
+
+
+    </style>
+        <div class="go"> Click me</div>
+
+    <script>
+    
+        // it is very important to note that javaScript is asingle treaded language and what that means is that it can only perform a function at a time.
+
+
+        // console.log("starting");
+        // setTimeout(function(){
+        //     console.log("running");
+        // }, 2000);
+        // console.log("ending");
+        // console.log("pnding");
+        // console.log("qnding");
+        // console.log("rnding");
+        // console.log("snding");
+
+        //Callback Hell, also known as Pyramid of Doom, is an anti-pattern seen in code of programmers who are not wise in the ways of asynchronous programming. ... It consists of multiple nested callbacks which makes code hard to read and debug.
+
+        //One of the best ways to reduce code clutter is by maintaining better separation of code. If you declare a callback function beforehand and call it later, you'll avoid the deeply nested structures that make callback hell so difficult to work with.
+
+        // Another way is to write out what ach callback i s doing within the written code.
+
+        const go  = document.querySelector('.go');
+        go.addEventListener("click", function(){
+            go.textContent = "GO"
+            setTimeout(function(){
+                go.classList.add("circle");
+                setTimeout(function(){
+                    go.classList.add("red");
+                    setTimeout(function(){
+                        go.classList.remove("circle");
+                        setTimeout(function(){
+                            go.classList.remove("red");
+                            go.classList.add("purple");
+                            setTimeout(function(){
+                                go.classList.add("fadeOut");
+                            },500)
+                        },300)
+                    },250)
+                },500)
+            },2000);
+        });
+
+        // change the text to Go
+        // make it a circle after 2 seconds.
+        // make it red after 0.5 secs
+        // make it square after 0.25secs.
+        // make it purple after 0.3 secs
+        // fade out after 0.5 secs
+        // finish
+    
+    </script>
+</body>
+</html>

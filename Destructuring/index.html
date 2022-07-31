@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Destructuring</title>
+    </head>
+    <body>
+        <script>
+            const alphabet = ["A", "B", "C", "D", "E", "F"];
+
+            const numbers = ["1", "2", "3", "4", "5", "6"];
+
+            // The common way to select  a string in an array is to select based on the index and store the string in a variable
+            // const i = alphabet[0];
+
+            // const j = alphabet[1];
+
+            // however with destructuring, we can just put the array on the left hand side and use the different positions in the array to reference the individual strings. This does two things at the same time.
+            //1. we are refencing a particulat index in the array
+            //2. and also storing the array in a variable.
+
+            // const [first, , second, ...rest] = alphabet;
+
+            //we can also use a
+
+            // console.log(first);
+            // console.log(second);
+            // console.log(rest);
+
+            // we can also use the spread operator to combine two arrays together
+
+            newArray = [...alphabet, ...numbers];
+            // The above is not very useful in arrays as in objects because we can easily concatenatein arrays
+
+            // const newArray2 = alphabet.concat(numbers);
+            // console.log(newArray2);
+
+            // console.log(newArray);
+
+            //destrsucturing is also very useful when a function returns an array
+
+            // function sumAndMultipy(a, b) {
+            //     return [a + b, a * b];
+            // }
+            // const a = sumAndMultipy(2, 3);
+
+            // const [sum, multiply] = sumAndMultipy(2, 3);
+            // console.log(sum);
+            // console.log(multiply);
+
+            // The real power of detructing comes with object.
+
+            const personOne = {
+                name: "Kyle",
+                age: "24",
+                address: {
+                    city: "Calgary",
+                    state: "Alberta",
+                },
+            };
+
+            const personTwo = {
+                name: "Sally",
+                age: "32",
+                address: {
+                    city: "Brampton",
+                    state: "Ontario",
+                },
+            };
+
+            // however if we want to change the variable name instead of the property name of the object. we can
+
+            // const { name: firstName, age } = personTwo;
+
+            // Also we can use the spread operator
+            // const { name: firstName, ...rest } = personTwo;
+
+            // console.log(firstName);
+            // console.log(rest);
+
+            // we can also destructure nested objects
+
+            // const {
+            //     name: firstName,
+            //     address: { city },
+            // } = personTwo;
+            // console.log(city);
+
+            // we can also use the spread operator to combine two objects if we he seperate content in both objects However the second object will overide everything we have in the first object.
+
+            // const personThree = { ...personOne, ...personTwo };
+            // console.log(personThree);
+
+            // Another useful part of destructuring using destructuring inside functions.
+
+            // function printUser(user) {
+            //     console.log(user);
+            // }
+
+            // printUser(personOne);
+
+            //THIS IS THE SIGLE MOST INPORTANT PART OF DESTRUCTIO BECAUSE OF ITS IMPORTANCE IN REACT AND OTRHER FRAMEWORKS
+            //Hence if we want to get the values of the properties in an object
+            // Here what the destructuring does is to take whatever object was passed into the function argument and isolate the each of the properties and spit out the values of those properties when the function is called
+
+            // it is basically saying for the object stated look for the properties values and do what ever you like with it.
+
+            function printUser({ name, age }) {
+                console.log(`${name},${age}`);
+            }
+
+            printUser(personOne);
+        </script>
+    </body>
+</html>

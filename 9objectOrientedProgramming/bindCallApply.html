@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bind, Call and Apply</title>
+    </head>
+    <body>
+        <script>
+            const john = {
+                name: "john",
+                age: 26,
+                job: "teacher",
+                presentation: function (style, timeOfDay) {
+                    if (style === "formal") {
+                        console.log(
+                            `good ${timeOfDay} Ladies and Gentlemen!, I am ${this.name}, I am your ${this.job} and I am ${this.age} years old `
+                        );
+                    } else if (style === "friendly") {
+                        console.log(
+                            `Hey Whats up!!!!!!! I am ${this.name}, I am your ${this.job} and I am ${this.age} years old `
+                        );
+                    }
+                },
+            };
+
+            const emily = {
+                name: "Emily",
+                age: 35,
+                job: "designer",
+            };
+
+            john.presentation("formal", "afternoon");
+            john.presentation("friendly", "morning");
+
+            john.presentation.call(emily, "formal", "evening");
+
+            john.presentation.apply(emily, ["friendly", "afternoon"]);
+
+            const johnFriendly = john.presentation.bind(john, "friendly");
+
+            johnFriendly("morning");
+            johnFriendly("night");
+        </script>
+    </body>
+</html>

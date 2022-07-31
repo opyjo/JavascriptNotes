@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+
+  </title>
+  <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+  <script>
+    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+
+    const buns = ['egg', 'wonder', 'brioche'];
+
+ 
+
+    const prices = {
+      hotDog: 453,
+      burger: 765,
+      sausage: 634,
+      corn: 234,
+    };
+
+    const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
+
+    const feedback = [
+      { comment: 'Love the burgs', rating: 4 },
+      { comment: 'Horrible Service', rating: 2 },
+      { comment: 'Smoothies are great, liked the burger too', rating: 5 },
+      { comment: 'Ambiance needs work', rating: 3 },
+      { comment: 'I DONT LIKE BURGERS', rating: 1 },
+    ];
+
+
+    
+      // Static Methods
+    // This methods are not included on the arrau created but are part of the javascript Array method.the can only be used with 'Array.'
+
+
+    // Array.of();
+    // This is used to create an array from its argument. it just basically creates an array.Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.
+        ofArray = Array.of("ope","ojo");
+        console.log(ofArray)
+
+    // Array.from();
+    //The Array.from() function is an inbuilt function in JavaScript which creates a new array instance from a given array. In case of a string, every alphabet of the string is converted to an element of the new array instance and in case of integer values, new array instance simple take the elements of the given array.
+      fromArray = Array.from("ope");
+      console.log(fromArray);
+
+      anotherArray = Array.from({length:10});
+      console.log(anotherArray);
+
+
+    // Make a function that creates a range from x to y with Array.from();
+      function createRange(start, end) {
+      const range = Array.from({ length: end - start + 1 }, function (item, index) {
+        return index + start;
+      });
+      return range;
+    }
+    
+    const myRange = createRange(3, 7);
+    // will still try to uderstand this later.
+
+    console.log(Array.isArray(myRange))
+
+    // Check if the last array you created is really an array with Array.isArray();
+    // Take the meats object and make three arrays with Object.entries(), Object.keys, Object.values()
+
+
+    const meats = {
+      beyond: 10,
+      beef: 5,
+      pork: 7
+    };
+
+    console.log(Object.entries(meats));// creates an array of each of the key:value pairs
+    console.log(Object.keys(meats));// creates any array of all the keys
+    console.log(Object.values(meats));// creates an array of all the values.
+
+
+    
+  </script>
+</body>
+
+</html>

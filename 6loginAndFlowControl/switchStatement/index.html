@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+    <style>
+         .turt{
+             position: relative;
+             transform: translateX(var(--x)) translateY(var(--y));
+             --x:0;
+             --y:0;
+             transition : transform 0.2s;
+         }
+    </style>
+
+<body>
+  <img width="200" src="turtle.png" alt="Turt" class="turt">
+
+</body>
+
+
+<script>
+// The switch statement executes a block of code depending on different cases. The switch statement is a part of JavaScript's "Conditional" Statements, which are used to perform different actions based on different conditions. Use switch to select one of many blocks of code to be executed.
+// The switch statement is easier to look at than an if statement. the only downside is that the switch statement have to be clearly defined.
+
+// //syntax
+// switch(expression) {
+//   case x:
+//     // code block
+//     break;
+//   case y:
+//     // code block
+//     break;
+//   default:
+//     // code block
+// } 
+
+// we will use the switch statement to build an animated turtle.
+    const turtle = document.querySelector('.turt');
+    let x = 0;
+    let y = 0;
+    const speed = 5;
+    function handleKeyDown(event){
+        // we need to ignore other keys and only allow arrow keys
+       if(!event.key.includes('Arrow')){
+            return;
+        }
+        // The below code is used to generate directional movement which will be transfered to the turtle using css variables.
+        switch(event.key){
+            case 'ArrowUp':
+                y = y - 1;
+                break;
+            case 'ArrowDown':
+                y = y + 1;
+                break;
+            case 'ArrowLeft':
+                x = x - 1;
+                break
+            case 'ArrowRight':
+                x = x + 1;
+                break;
+            default:
+                console.log('This is not a valid move')
+        }
+            turtle.setAttribute('style', `--x: ${x * speed}px; --y: ${y * speed}px`);
+    }
+    
+    window.addEventListener('keydown', handleKeyDown);
+
+</script>
+</html>

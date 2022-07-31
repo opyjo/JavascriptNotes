@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+
+  </title>
+  <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+
+
+  <script>
+
+
+    const prices = {
+      hotDog: 453,
+      burger: 765,
+      sausage: 634,
+      corn: 234,
+    };
+
+    const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
+
+    // Display all bun types with " or " - use join()
+
+    // const buns = ['egg', 'wonder', 'brioche'];
+    //    console.log(buns);
+    //    console.log(buns.join());// join takes an argument and turns it into a string seperated by commas,
+    //    console.log(buns.join(' or '));
+    //    console.log(buns.join(' - '));
+
+    // // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into an array.
+    // const foodStrings = "hot dogs,hamburgers,sausages,corn";
+    // console.log(foodStrings.split(','));
+    // console.log(foodStrings.split(' '));
+    // console.log(foodStrings.split(''));
+
+
+
+
+    // // take the last item off toppings with pop()
+    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+
+    // const noCheese = toppings.pop();// the pop method will remove the last item and return it
+    // console.log(noCheese);
+
+    // // add it back with push()
+    // const addCheese = toppings.push('cheese');// this method will add an item and return the length of the array.
+    // console.log(addCheese);
+    // // take the first item off toppings with shift()
+    
+    // console.log(toppings);
+    // toppings.shift();
+    // console.log(toppings);
+    // // add it back in with unshift()
+    // toppings.unshift('Mushroom');
+    // console.log(toppings);
+    // Do the last four,but immutable (with spreads and new variables)
+
+    // //pop
+    // let newToppings = toppings.slice(0,toppings.length-1);
+    // console.log(newToppings);
+
+    // //push
+    // newToppings = [...newToppings,toppings[toppings.length - 1]];
+    // console.log(newToppings);
+
+    // //shift
+    // console.log(toppings);
+    // let newToppings2 = toppings.slice(1,toppings.length);
+    // console.log(newToppings2);
+
+    // //unshift
+
+    // newToppings2 = [toppings[0],...newToppings2];
+    // console.log(newToppings2);
+    
+    
+    // // Make a copy of the toppings array with slice()
+
+    // sliceToppings = newToppings.slice(0)
+    // console.log(sliceToppings);
+    // // Make a copy of the toppings array with a spread
+
+    // spreadToppings = [... toppings];
+    // console.log(spreadToppings);
+    // take out items 3 to 5 of your new toppings array with splice()
+    // spliceToppings = toppings.splice(3,3);
+    // console.log(spliceToppings);
+    // find the index of Avocado with indexOf() / lastIndexOf()
+    // console.log(toppings);
+    // console.log(toppings.indexOf('Avocado'))
+    // console.log(toppings[5]);
+    // // Check if hot sauce is in the toppings with includes()
+    // console.log(toppings.includes('hot sauce'));
+    // // add it if it's not
+    // toppings.push('hot sauce');
+    // console.log(toppings);
+    // // flip those toppings around with reverse()
+    // console.log(toppings.reverse());
+    // console.log(toppings);
+
+    /*
+      Callback Methods
+    */
+
+    const feedback = [
+      { comment: 'Love the burgs', rating: 4 },
+      { comment: 'Horrible Service', rating: 2 },
+      { comment: 'Smoothies are great, liked the burger too', rating: 5 },
+      { comment: 'Ambiance needs work', rating: 3 },
+      { comment: 'I DONT LIKE BURGERS', rating: 1 },
+    ];
+
+    // find the first rating that talks about a burger with find()
+
+    // The find method executes the callback function once for each index of the array until the callback returns a truthy value. If so, find immediately returns the value of that element. Otherwise, find returns undefined.
+    function findBurgRating(singleFeedback){
+      if(singleFeedback.comment.includes('burger')){
+        return true;
+      }else{
+        return false;
+      } 
+    }   
+    const burgRating  = feedback.find(findBurgRating);
+    console.log(burgRating);
+    
+    // find all ratings that are above 2 with filter()
+    function findRating(checkRating){
+      if(checkRating.rating > 2){
+        return true
+      }else{
+        return false
+      }
+    }
+    const goodReviews = feedback.filter(findRating);
+    console.table(goodReviews);
+    
+    // find all ratings that talk about a burger with filter()
+    function findRatings(singleFeedback){
+      if(singleFeedback.comment.includes('burg')){
+        return true
+      }else{
+        return false
+      }
+    }
+    const allratings = feedback.filter(findRatings);
+    console.log(allratings)
+    // Remove the one star rating however you like!
+
+    // check if there is at least 5 of one type of meat with some()
+    // make sure we have at least 3 of every meat with every()
+    // sort the toppings alphabetically with sort()
+    // sort the order totals from most expensive to least with .sort()
+    // Sort the prices with sort()
+
+    /*
+      Looping Methods (next)
+    */
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Toastmaster Timing App</title>
+</head>
+<header class="top">
+    <h1> BREAK TIMER APP IN SECONDS(DEMO)</h1>
+</header>
+<body>
+    <div class="name">
+        <label for="Lecture">CLASS :    </label>
+        <select name="Toastmaster">
+            <option value="">Please select Class</option>
+            <option value="">Javascript</option>
+            <option value="">Web Development</option>
+            <option value="">Full Stack</option>
+            <option value="">UI / UX Design</option>
+            <option value="">Front-End</option>
+        </select>
+    </div>
+    <div class="speech">
+    <label for="speechType">BREAK :</label>
+    <select class="speechType">
+            <option value="">Please select the type of Break</option>
+            <option value=20>Morning break</option>
+            <option value=30>Quick timeout</option>
+            <option value=40>Lunch Break</option>
+            <option value=50>Final Break</option>
+            <option value=60>Long Break</option>
+        </select>
+    </div>
+    
+<div class="timer">
+    <form >
+        <label for="set">TIMER/RESET</label>
+        <input type="text" id="set">
+        <input type="submit" value="SET TIME">
+    </form>
+
+</div>
+
+<div class="sands">
+    <button class="startButton">START</button>
+    <button class="stopButton">STOP</button>
+</div>
+
+<div class="indicator">
+    <p class="grey"></p>
+    <p class="green">10 SECONDS REMAINING</p>
+    <p class="red"></p>
+</div>
+
+<script src="script.js">
+</script>
+</body>
+</html>

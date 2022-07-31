@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+      //1. GLOBAL SCOPE
+      //A javascript global variable is declared outside the function or declared with the window object. it can be accessed from any function. The window can be defined as the global scope.All methods available to us is the window object.
+      // it is very important to note also that the "var" is attached to the window object
+
+      //   const first = "ope"; // not available on the window object(window.first)
+
+      //   let second = "ojo"; // not available on the window object(window.second)
+
+      //   var age = 100; // available on the window object(window.age)
+
+      //   it is advisable to not make a variable globally scoped.
+
+      //    // 2. FUNCTIONS SCOPE
+      //     // (a) when variables are declared inside a function, those variables are only available inside the function and cannot be accessed in the global scope.
+
+      //   function sayHi() {
+      //     const name = "Ope";
+      //     const hair = "blonde";
+      //     const colour = "black";
+      //     console.log(`hi!!!!!`);
+      //   }
+
+      //   sayHi();
+      //   console.log(name);
+      //   console.log(hair);
+      //   console.log(black);
+
+      //(b) variables declared globally can be used within a function also. However if a variable is declared globally and within a function, javaScript first checks for the variable within the function and if there is none goes one level up until it gets to the window to check for the variable.
+
+      //3. BLOCK SCOPE
+      // whenever there is a set of block scope especially in an if statement, the variables declared within them are not available to the global scope.
+
+      if (1 === 1) {
+        let cool = true;
+      }
+      console.log(cool);
+
+      // A lexical scope in Javascript means that a variable defined outside a function can be accessible inside another function defined after the variable declaration. ... This is called due to lexical scoping in javascript.
+
+      //   const dog = "snickers";
+
+      //   function logDog() {
+      //     const dog = "lucky";
+      //     console.log(dog);
+      //   }
+
+      //   logDog();
+
+      //   function go() {
+      //     const dog = "sunny";
+      //     logDog("sunny");
+      //   }
+
+      //   go();
+    </script>
+  </body>
+</html>

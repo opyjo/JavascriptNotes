@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closures</title>
+</head>
+<body>
+
+
+    <script>
+
+        //Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. You have learned that we can create nested functions in JavaScript. ... This is called Closure. A function can return another function in JavaScript.
+
+        //normally the return statement ends the execution of a function and specifies the value to be returned to the function caller.
+
+
+        // function outer(){
+        //     const outervar = "Hey i am the outer var!";
+        //     function inner(){
+        //         const innervar = "Hey i am the inner var!";
+        //         console.log(innervar)
+        //         console.log(outervar)
+        //     }
+        //     return inner;
+        // }
+        // const innerFn = outer();
+        // innerFn();
+
+
+        function createGreeting (greeting){
+            const myGreet = greeting.toUpperCase();
+            return function(name){
+                return `${myGreet} ${name}`
+            }
+        }
+
+        const sayHello = createGreeting("hello");
+        const sayHey = createGreeting("hey");
+
+        console.log(sayHello("ope"));
+        console.log(sayHey("wale"));
+    </script>
+</body>
+</html>

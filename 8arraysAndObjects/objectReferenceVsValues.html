@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // with strings vakues of a variable can be easily copied into another variable
+
+            let name1 = "ope";
+            let name2 = "wale";
+
+            name2 = name1;
+
+            console.log(name1);
+
+            const person1 = {
+                name: "wes",
+                last: "bos",
+            };
+
+            const person2 = {
+                name: "wes",
+                last: "bos",
+            };
+
+            console.log(person1 === person2);
+
+            const person3 = person1;
+            console.log(person3);
+            person3.name = "larry";
+            console.log(person3);
+            console.log(person1.name);
+
+            // However objects behave differently
+
+            // person1 = {
+            //     first : "wes",
+            //     last : "box",
+            //     clothing : {
+            //         shirts : 10,
+            //         pants : 4,
+            //     }
+            // };
+            // person2 = {
+            //     first : "wes",
+            //     last : "box",
+            // };
+            // console.log(person1 === person2);// here even if the content of two objects are the same, two objects are not the same
+
+            // Also objects and arrays are copied by reference
+
+            // person3 = person1;
+            // person3.first = "Larry";
+            // console.log(person3.first);// This becomes Larry
+            // console.log(person1.first);// This is also Larry.
+            // Object is referencing object 1 hence any changes made to object 3 will affect object 1.
+
+            // one way to copy the content of an object into another object is by using the spread operator "..."
+
+            person3 = { ...person1 };
+            console.log(person3);
+            person3.first = "Larry";
+            console.log(person3.first);
+            console.log(person1.first);
+
+            // However using the spread operator to copy objects only does a shallow copy and does not go into the deeper objects in the main objects.
+
+            // person3.clothing.shirts = 100;
+            // console.log(person3.clothing.shirts);
+            // console.log(person1.clothing.shirts);
+
+            // to do a deep clone copy we can use a library called Lodash.
+
+            // The spread operator can also be used to merge objects.
+
+            // const meatInventory = {
+            //     bacon : 2,
+            //     sausage : 3,
+            // };
+            // const veggieInventory = {
+            //     lettuce : 5,
+            //     tomatoes : 3,
+            // }
+
+            // const inventory = {...meatInventory, ...veggieInventory};
+            // console.log(inventory);
+        </script>
+    </body>
+</html>

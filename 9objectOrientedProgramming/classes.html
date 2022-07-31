@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <script>
+      //function Construtor as done in ES5.i.e. a function that creates an object which is known as Constructor.
+      let Person = function (name, yearOfBirth, job) {
+        (this.name = name), (this.yearOfBirth = yearOfBirth), (this.job = job);
+      };
+
+      console.log(Person);
+
+      const Person1 = new Person("Opeyemi", 1983, "Software Engineer");
+      console.log(Person1);
+
+      // Person5.prototype.calculateAge = function () {
+      //     var age = new Date().getFullYear() - this.yearOfBirth;
+      //     console.log(age);
+      // };
+      // let person = new Person5("opeyemi", 1983, "developer");
+      // let person2 = new Person5("adejoke", 1986, "Payroll Officer");
+
+      // console.log(person);
+      // console.log(person2);
+
+      // person.calculateAge();
+      // person2.calculateAge();
+
+      // // Now this is known as classes in ES6
+
+      // class Person6 {
+      //     constructor(name, yearOfBirth, job) {
+      //         this.name = name;
+      //         this.yearOfBirth = yearOfBirth;
+      //         this.job = job;
+      //     }
+      //     calculateAge() {
+      //         let age = 2020 - this.yearOfBirth;
+      //         console.log(age);
+      //     }
+      // }
+
+      // const person7 = new Person6("fiyinfoluwa", 2015, "student");
+
+      // person7.calculateAge();
+
+      // // how to create subclasses in ES6.
+
+      // class Athelet6 extends Person6 {
+      //     constructor(name, yearOfBirth, job, olympicGames, medals) {
+      //         super(name, yearOfBirth, job);
+      //         this.olympicGames = olympicGames;
+      //         this.medals = medals;
+      //     }
+      //     wonMedal() {
+      //         this.medals++;
+      //         console.log(this.medals);
+      //     }
+      // }
+
+      // const johnAthelete6 = new Athelet6("john", 1990, "swimmer", 3, 10);
+
+      // johnAthelete6.wonMedal();
+      // johnAthelete6.calculateAge();
+    </script>
+  </body>
+</html>

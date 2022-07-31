@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Closures</title>
+    </head>
+    <body>
+        <script>
+            //This function calculates the retirement age.
+
+            function retirement(retAge) {
+                const a = `years left until retirement`;
+                return function (yob) {
+                    let age = 2020 - yob;
+                    console.log(retAge - age + a);
+                };
+            }
+
+            const canadaRetirement = retirement(70);
+            const nigeriaRetirement = retirement(65);
+            const usaRetirement = retirement(68);
+
+            console.log(canadaRetirement(1983));
+            console.log(nigeriaRetirement(1983));
+            console.log(usaRetirement(1983));
+        </script>
+    </body>
+</html>

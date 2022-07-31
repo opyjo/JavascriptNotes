@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    //    Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.An object can be created with figure brackets {…} with an optional list of properties. A property is a “key: value” pair, where a key is a string (also called a “property name”), and value can be anything.
+
+    const person = {
+        name : 'wes',
+        age : 100,
+        'cool-dude' : true,//we can use a dash in a property
+        'really cool' : false, // we ca also use space in a property
+        '777' : true, // we use a number also but it has to be a string
+        clothing : {
+            shirts : 10,
+            pants : 2,
+
+        }
+    };
+    // to add a property and value
+    person.job = 'Web Developer'
+
+    console.log(person) // Javascript does not consider the order in which the kay: value pairs are set.
+    // name : 'wes', name is the property while the 'wes' is the value.
+    // The value can be actually be of any type(SNNOBUS)
+    // property follows the same rule as variables.
+
+
+    // Also we can change the properties of an object. also it may seem that the object was created with a const, we can still change the properties within the object. The const in javascript does not necessarily mean constant. what it means is that the binding will never change which in his cas means the object person will always be person but the qualities or the property of the object can change
+
+    person.age = 40;
+
+    // if we want to create another object which the peroperties can never be changed we can use the freeze method.
+
+    const personFroze = Object.freeze(person);
+    console.log(person);
+    // this is a concept called immutable.
+    // to access the object property we use the "." notation.
+
+    console.log(person.clothing.shirts);
+
+    //we call also use the square brackets notation- []
+
+console.log(person.clothing["shirts"]);
+// one o fthe reasons we cannot use bracket notation is the one below. we cannot use a . notation if the peroperty is like "cool-dude".
+console.log(person["cool-dude"])
+
+// Methods are functions inside an object.
+
+
+
+    </script>
+</body>
+</html>

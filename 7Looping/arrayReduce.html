@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Reduce</title>
+    </head>
+    <body>
+        <script>
+            // const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
+
+            // let amount = 0;
+            // orderTotals.forEach((num) => (amount = num + amount));
+
+            // console.log(amount);
+
+            // we can calculate the total of the below arrays by using forEach to loop over each of the items in the array.
+
+            // let amount = 0;
+            // const euros = [29.76, 41.85, 46.5];
+            // euros.forEach(function(euro){
+            //     amount = euro + amount;
+            // });
+            // console.log(amount);
+
+            // however we can actually do the same with reduce in just two lines and without declaring a variable called amount. the variable becomes an argument in the callback used whne calling the reduce method.
+
+            const euros = [29.76, 41.85, 46.5];
+
+            const sum = euros.reduce(function (total, amount) {
+                return total + amount;
+            }, 0);
+
+            console.log(sum);
+
+            // in actual sence the callfucntion can be written outside also
+            // function addTotal(total,amount){
+            //     return total + amount;
+            // }
+
+            // const sum = euros.reduce(addTotal, 0);// here the second parameter indicates the start point for the total. if the parameter is not added it is assumed that the total will start from 0.
+            // console.log(sum);
+
+            //     const inventory = [
+            //   { type: 'shirt', price: 4000 },
+            //   { type: 'pants', price: 4532 },
+            //   { type: 'socks', price: 234 },
+            //   { type: 'shirt', price: 2343 },
+            //   { type: 'pants', price: 2343 },
+            //   { type: 'socks', price: 542 },
+            //   { type: 'pants', price: 123 },
+            // ];
+
+            // how did the above work? When the loop starts the total value is the number on the far left (29.76) and the current amount is the one next to it (41.85). The calculation is repeated for each amount in the array, but each time the current value changes to the next number in the array, moving right.When there are no more numbers left in the array the method returns the total value
+        </script>
+    </body>
+</html>

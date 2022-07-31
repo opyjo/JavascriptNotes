@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title> </title>
+        <link rel="stylesheet" href="../../base.css" />
+    </head>
+
+    <body>
+        <script>
+            const people = [
+                {
+                    birthday: "April 22, 1993",
+                    names: {
+                        first: "Keith",
+                        last: "Buckley",
+                    },
+                },
+                {
+                    birthday: "January 3, 1975",
+                    names: {
+                        first: "Larry",
+                        last: "Heep",
+                    },
+                },
+                {
+                    birthday: "February 12, 1944",
+                    names: {
+                        first: "Linda",
+                        last: "Bermeer",
+                    },
+                },
+            ];
+            const cleanPeople = people.map(function (person) {
+                // : This convert the birthdays to javascript timestamp
+                const birthday = new Date(person.birthday).getTime();
+                console.log(new Date(person.birthday)); // This is used to create the date object.
+                console.log(birthday);
+                // now timestamp
+                const now = Date.now();
+                const age = Math.floor((now - birthday) / 31536000000);
+                // get their birthday
+                // figure out how old they are
+                // return their full name and bday in an object
+                return {
+                    age,
+                    name: `${person.names.first} ${person.names.last}`,
+                };
+            });
+            console.table(cleanPeople);
+            //The filter() method creates an array filled with all array elements that pass a test (provided as a function). Note: filter() does not execute the function for array elements without values. Note: filter() does not change the original array.
+
+            // the below filter method is written verbose
+
+            const over40 = cleanPeople.filter(function (person) {
+                if (person.age > 40) {
+                    return true;
+                }
+            });
+            console.table(over40);
+
+            // however the above array filter method can be re-written as
+            // const over40 = cleanPeople.filter(person =>{
+            //     return person.age > 40;
+            // });
+            // console.table(over40);
+
+            // // Also removing the implicit return we can have
+
+            // const over40 = cleanPeople.filter(person => person.age > 40);
+            // console.table(over40);
+
+            // The difference btw find and filter is that filter will return an array of items that match the condition while find will return only one item that we want to find.
+
+            const students = [
+                {
+                    id: "11ce",
+                    first_name: "Dall",
+                    last_name: "Puckring",
+                },
+                {
+                    id: "2958",
+                    first_name: "Margarete",
+                    last_name: "Brandi",
+                },
+                {
+                    id: "565a",
+                    first_name: "Bendicty",
+                    last_name: "Woodage",
+                },
+                {
+                    id: "3a16",
+                    first_name: "Micki",
+                    last_name: "Mattes",
+                },
+                {
+                    id: "f396",
+                    first_name: "Flory",
+                    last_name: "Gladeche",
+                },
+                {
+                    id: "de5f",
+                    first_name: "Jamill",
+                    last_name: "Emilien",
+                },
+                {
+                    id: "54cb",
+                    first_name: "Brett",
+                    last_name: "Aizikowitz",
+                },
+                {
+                    id: "9135",
+                    first_name: "Lorry",
+                    last_name: "Smallman",
+                },
+                {
+                    id: "978f",
+                    first_name: "Gilly",
+                    last_name: "Flott",
+                },
+            ];
+
+            // const people = [
+            //     {
+            //         birthday: "April 22, 1993",
+            //         names: {
+            //             first: "Keith",
+            //             last: "Buckley",
+            //         },
+            //     },
+            //     {
+            //         birthday: "January 3, 1975",
+            //         names: {
+            //             first: "Larry",
+            //             last: "Heep",
+            //         },
+            //     },
+            //     {
+            //         birthday: "February 12, 1944",
+            //         names: {
+            //             first: "Linda",
+            //             last: "Bermeer",
+            //         },
+            //     },
+            // ];
+
+            //Assuming we want to find the student with the id of 565a
+
+            const studentwithId = students.find(function (stud) {
+                if (stud.first_name === "Bendicty") {
+                    return true;
+                }
+            });
+            console.log(studentwithId);
+
+            // const student = students.find((stud) => stud.id === "565a");
+            // console.log(student);
+
+            // the find method will return an object, whil the filter method will return an array.
+        </script>
+    </body>
+</html>

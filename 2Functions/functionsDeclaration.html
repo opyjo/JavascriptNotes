@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>functions declaration</title>
+    </head>
+    <body>
+        <script>
+            // functions are known as first class citizens because you are able to pass, return and assign a type, that type is considered to be a first class citizen.This is one reason Javascript is becoming a popular destination for functional programming. Since we are able to create functions that can accept functions as well as return functions. This allows us to create Higher Order Functions. Higher Order Functions are functions that accept a function, and/or return a function
+
+            // //1. function with a name
+            //     function doctorize(firstname){
+            //     return `Dr. ${firstname}`
+            // }
+
+            // function sayMyName(firstname) {
+            //     return `hey  ${firstname}`;
+            // }
+
+            // myName = sayMyName("Opeyemi");
+            // console.log(myName);
+
+            // // 2. anonymous function(function without a name). only valid as callbacks.
+            //     function (firstname){
+            //         return `Dr. ${firstname}`
+            //     }
+
+            // 3. Function Expression
+
+            //  const doctorize = function (firstname){
+            //     return `Dr. ${firstname}`
+            // };
+
+            // const sayMyName = function (firstname) {
+            //     return `HEY ${firstname}`;
+            // };
+
+            // const myName = sayMyName("Wale");
+            // console.log(myName);
+
+            function multiplyNumbers(a, b, c = 3) {
+                return (total = a * b * c);
+            }
+
+            const myTotal = multiplyNumbers(5, 10);
+            console.log(myTotal);
+
+            // 4. Arrow function
+            // importance of arrow functions
+            // a. The have short syntax so you can easily and uickly write a function
+            // b. They do not have their scope in regards to the "this" keyword
+            // c. arrow functions are anonymous functions.
+
+            // function inchToCM(inches){
+            //     return inches * 2.54;
+            // }
+
+            // //converting the above to arrow function
+            // // (i). The named function is changed to anonymous function and stored in a varaible
+
+            // const inchToCM = function(inches){
+            //     return inches * 2.54;
+            // }
+
+            // //  (ii) The function keyword is removed and converted to a fat arrow which is moved to the opposite side of the parenthesis.
+
+            // const inchToCM = (inches) => {
+            //     return inches * 2.54;
+            // }
+
+            //  (iii)Finally the curly brackets and the return key are removed.
+
+            // const inchToCM = (inches) => inches * 2.54;
+
+            // (iv) Going up another level, you can also remove the parenthesis.
+
+            //     const inchToCM = inches => inches * 2.54
+
+            //     function add(a, b=3){
+            //         const total = a + b;
+            //         return total;
+            //     }
+
+            // // converting to arrow function
+            // const add = (a, b = 3) => a + b;
+
+            //4. immediately invoked function expresssion.
+            // The benefit of this is to provide a wat to invoke a function but a bit advanced
+            // (function () {
+            //     console.log("running the function");
+            //     return ` you are cool`;
+            // })();
+
+            //5. Methods. This is a function that lives inside an Object.
+
+            //6. callback functions -
+        </script>
+    </body>
+</html>

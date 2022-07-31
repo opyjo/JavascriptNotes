@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Constructor</title>
+    </head>
+
+    <div class="husband"></div>
+
+    <div class="wife"></div>
+    <body>
+        <script>
+            const husband = document.querySelector(".husband");
+            const wife = document.querySelector(".wife");
+
+            function person(first, last, age, eye) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+                // this.fullName = function () {
+                //     return ` my name is ${this.firstName} ${this.lastName}`;
+                // };
+            }
+
+            person.prototype.fullName = function () {
+                return `My Name is ${this.firstName} ${this.lastName}`;
+            };
+
+            const person1 = new person("ope", "ojo", 37, "brown");
+            console.log(person1);
+            const person2 = new person("joke", "ojo", 34, "blue");
+            console.log(person2);
+
+            husband.innerHTML = person1.fullName();
+            wife.innerHTML = person2.fullName();
+        </script>
+    </body>
+</html>

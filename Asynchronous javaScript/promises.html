@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Promises</title>
+        <link rel="stylesheet" href="../base.css" />
+    </head>
+    <body>
+        <script>
+            // what is a promise?
+
+            // A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+
+            //object sample
+
+            const pro = new Promise(function (resolve, reject) {
+                let a = 6;
+                if (a === 5) {
+                    resolve(`This is very correct`);
+                } else {
+                    reject("something is very wrong");
+                }
+            })
+                .then(function (result) {
+                    console.log(result);
+                })
+                .catch(function (result) {
+                    console.log(result);
+                });
+
+            // a promise is like an "I owe you" for something that will happen in the future. when we request for a data from an API or set a timer to start. what we get back immediately is not the  data we requestd for because it might take some time to be processed. what we get back is a promise which will either be in fulfilled, rejected or pending state.Promise are made immediately but they do not resolve immediately.
+
+            // the syntax for a promise is
+
+            let promises = new Promise(function (resolve, reject) {});
+
+            function makePizza(toppings) {
+                const pizzaPromise = new Promise(function (resolve, reject) {
+                    // wait one second for the pizza to cook
+                    setTimeout(function () {
+                        //when you are ready, you can resolve this promise
+                        resolve(
+                            ` here is your 🍕 with the toppings ${toppings.join(
+                                " "
+                            )}`
+                        );
+                        // if something went wrong, we can reject this promise
+                    }, 1000);
+                });
+                return pizzaPromise;
+            }
+            const pepperoniPizza = makePizza(["pepperoni"]);
+            const canadianPizza = makePizza([
+                "pepperoni",
+                "mushrooms",
+                "onions",
+            ]);
+
+            console.log(pepperoniPizza);
+
+            pepperoniPizza.then(function (pizza) {
+                console.log(pizza);
+            });
+
+            // the above code can be rewritten by removing the return keyword.
+            // function makePizza(toppings) {
+            //     return new Promise(function (resolve, reject) {
+            //         // reject if people try with pineapple
+            //         if (toppings.includes("pinapple")) {
+            //             reject(`Seriously? get out 🍍`);
+            //         }
+            //         // wait one second for the pizza to cook
+            //         setTimeout(function () {
+            //             //when you are ready, you can resolve this promise
+            //             resolve(
+            //                 ` here is your 🍕 with the toppings ${toppings}`
+            //             );
+            //             // if something went wrong, we can reject this promise
+            //         }, 1000);
+            //     });
+            // }
+            // makePizza(["pepperoni"])
+            // .then(function(pizza){
+            //     console.log(pizza);
+            //     return makePizza(["ham", "chesse"])
+            // }).then(function(pizza){
+            //     console.log(pizza)
+            //     return makePizza(["pepper","butter","onion"])
+            // }).then(function(pizza){
+            //     console.log(pizza);
+            // });
+
+            // Promises error handling
+            // for every promise initiated a .then and a .catch must be chained in. The.catch is used to cathc the error message and display what the error messade is all about.
+            //     makePizza(["chesse", "pinapple"])
+            //         .then(function (pizza) {
+            //             console.log(pizza);
+            //         })
+            //         .catch(function (err) {
+            //             console.log(err);
+            //         });
+            //
+        </script>
+    </body>
+</html>

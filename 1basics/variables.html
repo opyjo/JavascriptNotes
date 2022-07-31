@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Variable</title>
+  </head>
+  <body>
+    <script>
+      //";" is used to terminate a line of javascript and becomes a statement.
+      // this is an instruction to javascript to do something.
+
+      //{} - this is a code block. which states that javascript should run whatever is in the code block.Function defination, if statement and loops do not need a code block because the instruction is already inside the block.
+
+      // Also JavaScript do not necessarily need a semi-colon because it is run by what is called ASCI-automatic semi-colon insertion. But is best to learn javaScript with a semi-colon.
+
+      // DIFFERENCE BTW VAR LET AND CONST
+      // 1. var and let are declared once and can be changed anytime.There is no need adding var/let to change them
+      //const variables can never be changed.
+
+      //There are 3 ways of declaring a variable
+
+      //   var firstName = "Opeyemi";
+
+      //   console.log(firstName);
+
+      //   let age = 300;
+
+      //   const cool = true;
+
+      //   console.log(cool);
+
+      //we can also declare a variable before assigning a value to it as seen below
+
+      //   dog = "snickers";
+      // this is still allowed in javascript but its bad practise it can be prevented by using "use strict" and the console will display an error message.
+
+      // we only need to delare a variable with a var, let or const once. subsequent change does not need the use of var,let or const.
+
+      //2. var is a function scoped variable while let and const are block scoped variable.
+
+      //   writeName = () => {
+      //       var name = "Opeyemi"
+      //     console.log(name);
+      // };
+      //   let name = "Opeyemi";
+
+      function writeName() {
+        let name = "Johnson";
+        console.log(name);
+      }
+
+      writeName();
+
+      console.log(name);
+
+      //   writeName("Opeyemi");
+    </script>
+  </body>
+</html>

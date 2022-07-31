@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Arrays</title>
+    </head>
+    <body>
+        <script>
+            // Arrays are used for holding items where the order matters. Each thing inside an array is called an item and the position is called an index. n JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable
+
+            // const names = ["wes", "kait", "snickers"];
+            // console.log(names);
+
+            // // to confirm if somthing is an array we use "Array.isArray"
+            // checkingArray = Array.isArray(names);
+            // console.log(checkingArray);
+
+            // // to confirm the last item in an array we can use
+            // console.log(names[names.length-1]);
+
+            // //An immutable value is one that, once created, can never be changed. In JavaScript, primitive values such as numbers, strings and booleans are always immutable. However, data structures like objects and arrays are not.
+
+            // // Mutation method - They do change the original data
+
+            // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            // const numbersBackwards = numbers.reverse();
+            // console.log(numbersBackwards);
+            // console.log(numbers);
+
+            // // anytime you want to use a mutation method and not want to mutate the original array.we need to take a copy of the original array using the spread operator and then use the copied array
+
+            // const numbersReversed  = [...numbers];
+            // console.log(numbersReversed);
+
+            //Immutable method - They do not change the original data
+
+            // const pizzaSlice = numbers.slice(2, 4);
+            // console.log(pizzaSlice);
+            // console.log(numbers);
+
+            // const names = ["wes", "kait", "snickers"]
+            // console.log(names)
+            // The most basic thing we will want to do to an array is to add to the array.
+
+            // names.push("lux");
+            // console.log(names)
+
+            // if we do not want the arrays to be muted, we can actually use the spread method to create a new array
+
+            // const names2 = [...names, "lux"];
+            // console.log(names2);
+            // console.log(names);
+
+            // to add an item to the front we use unshift
+            // names.unshift("poppy"),
+            // console.log(names);
+
+            // const names3 = ["poppy", ...names];
+            // console.log(names3);
+
+            // slice and splice are methods used to grab a portion of the array. slice is immutable while splice is mutable.
+
+            //  MDN document  : The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.
+
+            // MDN document : The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+
+            // slice
+
+            // const figures = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            // numberslice = figures.slice(3, 5);
+            // console.log(numberslice);
+
+            // figures.splice(3, 5);
+            // console.log(figures);
+
+            // adding items to the middle of an array
+
+            const bikes = ["bianchi", "miele", "panasonic", "miyata"];
+            // adding benoto to the bikes
+            const newBikes = [
+                ...bikes.slice(0, 2),
+                "benoto",
+                ...bikes.slice(2),
+            ];
+            console.log(newBikes);
+
+            // Also to remove an item from an array
+            // removing panasonic from the bikes.
+            // const newBikes2 = [...newBikes.slice(0, 3), ...newBikes.slice(4)];
+            // console.log(newBikes2);
+        </script>
+    </body>
+</html>

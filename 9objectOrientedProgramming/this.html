@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>This Keyword</title>
+    </head>
+    <body>
+        <button class="one">Button1</button>
+        <button class="two">Button2</button>
+
+        <script>
+            // The "this" keyword is the instance of an object to which a function is bound.This keyword mean the thing to the left of the dot when you are calling a method.
+
+            // const button1 = document.querySelector(".one");
+            // const button2 = document.querySelector(".two");
+
+            // function tellMeAboutTheButton() {
+            //     console.log(this);
+            // }
+
+            // button1.addEventListener("click", tellMeAbountTheButton);
+            // button2.addEventListener("click", tellMeAboutTheButton);
+
+            // in the above the "this" keyword was bound the button1 object
+
+            // // Also most importantly having a function and using the new keyword will return an object that is an instance of that object
+
+            // the way we attach properties to that instance is by using the "this" keyword
+
+            function pizza(toppings = [], customer) {
+                console.log(`making a pizza`);
+                this.toppings = toppings;
+                this.customer = customer;
+            }
+
+            const pepperoniPizza = new pizza(["pepperoni"], "wes bos");
+            console.log(pepperoniPizza);
+
+            const pineapplePizza = new pizza();
+            console.log(pineapplePizza);
+
+            //     // we will then create a method using the funtion contructor also.
+            //     this.eat = function(){
+            //         if(this.slices > 0){
+            //             this.slices = this.slices - 1
+            //             console.log(`you know have ${this.slices} left`)
+            //         } else{
+            //             console.log(`Sorry, No slices left`)
+            //         };
+            //     };
+            // };
+
+            // However doing the above is not the best way to create a method on the instance of an object. because doing it that way will only create a copy of the method on each of the object prototype created. the best way to do this is to create the method on the mother object which is the pizza object and that can be done by:
+            // function pizza(toppings = [], customer){
+            //     console.log(`Making a pizza`);
+            //save the toppings that were passed in, to this instance of pizza. we are passing properties to the instance
+            // this.toppings = toppings;
+            // this.customer = customer;
+            // this.slices = 10;
+            // we will then create a method using the funtion contructor also.
+            //     pizza.prototype.eat = function(){
+            //         if(this.slices > 0){
+            //             this.slices = this.slices - 1
+            //             console.log(`you know have ${this.slices} left`)
+            //         } else{
+            //             console.log(`Sorry, No slices left`)
+            //         };
+            //     };
+            // };
+
+            // // here the perpperoniPizza and the canadinaPizza are instance of the object pizza.
+            // const pepperoniPizza = new pizza(["pepperoni"], "Opeyemi");
+            // const canadianPizza = new pizza(["pepperoni", "mushroom", "onions"], "adejoke");
+            // console.log(pepperoniPizza);
+            // console.log(canadianPizza);
+        </script>
+    </body>
+</html>

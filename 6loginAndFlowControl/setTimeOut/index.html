@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="../base.css" />
+    </head>
+
+    <body>
+        <script>
+            // function settingTime() {
+            //     console.log(`i am very happy !!!!!`);
+            // }
+
+            // console.log('starting')
+            // setTimeout(settingTime, 2000);
+            // console.log('finishing')
+
+            function sayDone() {
+                console.log("i m done");
+            }
+
+            const done = setInterval(sayDone, 1000);
+
+            clearInterval(done);
+
+            //     // There is a Gotcha with setInterval in that sometimes we might want the interval to start running immediately without waitin for the first few seconds before running. what we can do in this case is to create our own setInterval function.
+
+            //     function setImmediateInterval(funcToRun,ms){
+            //     // we call the function right away
+            //     funcToRun();
+            //     // run a regular interval
+            //     return setInterval(funcToRun,ms);
+            // }
+            //     setImmediateInterval(buzzer,2000);
+
+            // to stop the timer from running, we need to pass the setinterval into a variable and then user clearTimeout to stop the timer from running.
+
+            //     function sayHello(){
+            //         console.log('Hello!!!!!!')
+            //     }
+
+            //     const sayingHello = setInterval(sayHello,1000);
+
+            //     clearTimeout(sayingHello)
+            //
+        </script>
+    </body>
+</html>

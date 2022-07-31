@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fetch API</title>
+
+        <style>
+            .user {
+                font-size: 10px;
+                border: 2px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="getText">Get Text</button>
+        <div class="text"></div>
+
+        <script>
+            const button1 = document.querySelector("#getText");
+            const text = document.querySelector(".text");
+
+            button1.addEventListener("click", getText);
+
+            function getText() {
+                fetch('users.json')
+                .then((res)=>{
+                     return(res.json())
+                })
+                .then((data)=>{
+                    data.forEach((dat)=>{
+                        console.log(dat);
+                    textHTML = 
+                    `<div class="user">
+                        <h1> Login ID:${dat.id}</h1>
+                        <h1> User-name:${dat.name}</h1>
+                        <h1> User-email:${dat.email}</h1>
+                    </div>`
+                    text.innerHTML += textHTML
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>
+</body>
+</html>

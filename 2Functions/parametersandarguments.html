@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>parametersandarguments</title>
+    </head>
+    <body>
+        <script>
+            calculateBill = function (Amount) {
+                // this is the function body
+                console.log("running calculate bill !!!!!");
+                const total = Amount * 1.13;
+                return Math.ceil(total);
+            };
+            todaysBill = calculateBill(150);
+            console.log(todaysBill);
+
+            sayHiTo = function (firstName) {
+                return `Hello ${firstName}`;
+            };
+
+            const greeting = sayHiTo("ope");
+            console.log(greeting);
+
+            // Expressions can also be passed in as arguments also.
+            const lastBill = calculateBill(20 + 15 + 15 + 16 + 20);
+            console.log(lastBill);
+
+            // default value can be passed as parameters so that when an argument is not passed in, the default value will become the argument.
+
+            calculateBill = function (Amount = 200) {
+                const total = Amount * 1.13;
+                return Math.ceil(total);
+            };
+
+            const defaultTotal = calculateBill();
+            console.log(defaultTotal);
+        </script>
+    </body>
+</html>

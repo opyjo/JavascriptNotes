@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fetch API</title>
+    </head>
+    <body>
+        <button id="getText">Get Text</button>
+        <div class="text"></div>
+
+        <script>
+            const button1 = document.querySelector("#getText");
+            const text = document.querySelector(".text");
+
+            button1.addEventListener("click", getText);
+
+            function getText() {
+                fetch("sample2.txt")
+                    .then((res) => {
+                        return res.text();
+                    })
+                    .then((data) => {
+                        const textHTML = `<div>${data}</div>`;
+                        text.innerHTML = textHTML;
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            }
+        </script>
+    </body>
+</html>

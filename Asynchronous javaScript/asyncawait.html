@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsyncAwait</title>
+  </head>
+  <body>
+    <h2>JavaScript async / await</h2>
+
+    <h1 id="demo"></h1>
+
+    <script>
+      //ASYNC
+      // /An async function is a function declared with the async keyword, and the await keyword is permitted within them. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+
+      //"async and await make promises easier to write".async makes a function return a Promise.await makes a function wait for a Promise
+
+      // function myFunction() {
+      //   return Promise.resolve("Hello");
+      // }
+      // console.log(myFunction());
+
+      //Using async
+
+      async function myFunction() {
+        return "Hello";
+      }
+      console.log(myFunction());
+
+      //AWAIT
+      //The await keyword before a function makes the function wait for the promise.
+
+      async function myDisplay() {
+        let myPromise = new Promise(function (resolve, reject) {
+          resolve("I love You !!");
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+      }
+
+      myDisplay();
+    </script>
+  </body>
+</html>

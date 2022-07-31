@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+  </head>
+  <body>
+    <button id="button">Get text file</button>
+    <div class="text"></div>
+
+    <script>
+      // Using XMLHttpRequest
+
+      const button = document.querySelector("#button");
+
+      button.addEventListener("click", loadText);
+
+      function loadText() {
+        //create the XHR object
+        let xhr = new XMLHttpRequest();
+        // the open function takes 3 parameter
+        xhr.open("GET", "user.json", true);
+        // the .onload ensure that the page is fully loaded
+        xhr.onload = function () {
+          if (this.status === 200) {
+            document.querySelector(".text").innerHTML = this.responseText;
+          }
+        };
+        // sends request
+        xhr.send();
+      }
+
+      //HTTP statuses
+      //200: 'ok'
+      //403: 'Forbidden'
+      //404: 'Not Found'
+    </script>
+  </body>
+</html>
